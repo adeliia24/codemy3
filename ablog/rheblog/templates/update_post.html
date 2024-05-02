@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Update blog Post...</h1>
+<br>
+{% if user.is_authenticated %}
+
+<div class="form-group">
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-dark">Обновить</button>
+  </form>
+</div>
+{% else %}
+<p>Вы не можете изменить</p>
+{% endif %}
+{% endblock %}
